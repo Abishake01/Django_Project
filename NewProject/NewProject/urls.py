@@ -21,5 +21,5 @@ from.import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.page),
-    path('cal',include('calculator.urls')),
+    path('first',include('calculator.urls')),
 ]
