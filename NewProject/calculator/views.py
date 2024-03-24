@@ -5,3 +5,4 @@ from django.http import HttpResponse
  
 def cal(request):
     return render(request,'index.html')
+ 
