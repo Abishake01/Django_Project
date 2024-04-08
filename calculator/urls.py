@@ -21,5 +21,5 @@ from .import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.page),
-    path('first',include('calsi.urls')),
+    path('calculator',include('calsi.urls')),
 ]
