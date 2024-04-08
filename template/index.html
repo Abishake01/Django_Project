@@ -11,7 +11,7 @@
 </head>
 <body>
      
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary  ">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Calculator App</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,23 @@
           </div>
         </div>
       </nav>
+
       <div class="container-fluid">
+       <div class="row">
+        <div class="col-md-6" style="margin: 2rem auto 0 auto;">
+            {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error</strong>  
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% else %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ans}}</strong>  
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}
+        </div>
+       </div>
         <div class="row">
             <div class="col-md-6" style="margin: 2rem auto 0 auto;">
                 <img class="img-fluid" src="{% static 'calsi.jpg' %}" style="margin-left: 240px; margin-bottom: 20px;">
@@ -37,7 +53,7 @@
                     <div class="card-body">
                         <form method="GET" action="{% url 'submitquery' %}">
                             <div class="form-group">
-                                <input type="number" class="form-control" name="query" id="query">
+                                <input type="search" class="form-control" name="query" id="query">
                             </div>
                             <div class="row" style="margin-top: 10px;">
                                 <div class="col-6">
@@ -71,6 +87,10 @@
             <li class="list-group-item">-    Subration</li>
             <li class="list-group-item">*    Multiple</li>
             <li class="list-group-item">/    Divide</li>
+            <li class="list-group-item">%    Modukus</li>
+            <li class="list-group-item">**   Exponent</li>
+            <li class="list-group-item">//   Floor Division</li>
+          
           
           </ul>
       </div>
