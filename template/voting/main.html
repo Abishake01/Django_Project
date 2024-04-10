@@ -10,6 +10,7 @@
 
 </head>
 <body id="bg" style="background: url('{{ STATIC_URL }}static/ok.webp') ;">
+  {{arr}}
      
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" > 
         <div class="container-fluid" >
@@ -75,10 +76,16 @@
       </div>
       <div class="row">
         <div class="col-md-6" style="margin: 2rem auto 0 auto; color: aliceblue;">
-        <h1 class="display-4" id="about" name="about" style="text-align: center; color: aliceblue;">About</h1>
+      <h1  class="badge text-bg-success" id="about" name="about" style="text-align: center; color: aliceblue; display: block; font-size: 2rem;"> About</h1>
         <hr>
         <p class="display-4" id="about" name="about" style="text-align: center; color: aliceblue;"> Pic your Fav Language        </p>
-        <p class="display-4" id="about" name="about" style="text-align: center; color: aliceblue;">Select a Language</p>
+       </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" style="margin: 2rem auto 0 auto; color: aliceblue;">
+      <h1  class="badge text-bg-danger" id="about" name="about" style="text-align: center; color: aliceblue; display: block; font-size: 2rem;">Instruction</h1>
+        <hr>
+         <p class="display-4" id="about" name="about" style="text-align: center; color: aliceblue;">Select a Language</p>
       </div>
       </div>
    

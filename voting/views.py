@@ -3,4 +3,8 @@ from django.http import HttpResponse,JsonResponse
 
 # Create your views here.
 def vote(request):
-    return render(request,'main.html')
+    arr=['Python','Java','C','C++','Mysql','DataBase','HTML','CSS','JavaScript','TailwindCss','Django','React','Node.JS']
+    mydic={
+        'arr':arr
+    }
+    return render(request,'main.html',context=mydic)
