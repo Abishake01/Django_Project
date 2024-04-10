@@ -1,0 +1,94 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+</head>
+<body id="bg" style="background: url('{{ STATIC_URL }}static/ok.webp') ;">
+     
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" > 
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="#">Voting App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#about" style="border: 10px;">About</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#instruction">Instruction </a>
+              </li>  
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+       <div class="row">
+        <div class="col-md-6" style="margin: 2rem auto 0 auto;">
+            {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error</strong>  
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% else %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{q}}={{ans}}</strong>  
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}
+        </div>
+       </div>
+        <div class="row">
+            <div class="col-md-6" style="margin: 2rem auto 0 auto;">
+                <img class="img-fluid" src="{% static 'webpage.jpg' %}" style="  margin-bottom: 20px;">
+                <div class="card">
+                    <div class="card-body" style="background-color:rgb(29, 126, 210);">
+                        <form method="GET" action="{% url 'submitquery' %}">
+                            <div class="form-group">
+                                <input type="search" class="form-control" name="query" id="query">
+                            </div>
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col-6">
+                                    <input type="submit" class="btn btn-success" style="display: block;margin: 0 auto;">
+
+                                </div>
+                                <div class="col-6">
+                                    <input type="reset" class="btn btn-danger" style="display: block;margin: 0 auto;">
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" style="margin: 2rem auto 0 auto; color: aliceblue;">
+        <h1 class="display-4" id="about" name="about" style="text-align: center; color: aliceblue;">About</h1>
+        <hr>
+        <p class="display-4" id="about" name="about" style="text-align: center; color: aliceblue;"> Pic your Fav Language        </p>
+        <p class="display-4" id="about" name="about" style="text-align: center; color: aliceblue;">Select a Language</p>
+      </div>
+      </div>
+   
+      <div class="container-fluid" style="margin-bottom: 20rem;">
+        <div class="row">
+            <footer class="fixed-bottom navbar-light" style="background-color: black;color: white;text-align: center;">
+                <p>Thanks for using the Voting app</p>
+            </footer>
+        </div>
+      </div>
+    
+</body>
+</html>

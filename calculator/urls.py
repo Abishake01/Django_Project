@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.page),
     path('calculator',include('calsi.urls')),
+    path('voting',include('voting.urls')),
 ]
