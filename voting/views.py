@@ -5,6 +5,6 @@ from django.http import HttpResponse,JsonResponse
 def vote(request):
     arr=['Python','Java','C','C++','Mysql','DataBase','HTML','CSS','JavaScript','TailwindCss','Django','React','Node.JS']
     mydic={
-        'arr':arr
+        'arr': arr
     }
     return render(request,'main.html',context=mydic)
