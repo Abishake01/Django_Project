@@ -8,3 +8,6 @@ def vote(request):
         'arr': arr
     }
     return render(request,'main.html',context=mydic)
+def getquery(request):
+    q=request.GET['languages']
+    return HttpResponse(q)
