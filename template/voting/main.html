@@ -32,21 +32,7 @@
       </nav>
 
       <div class="container-fluid">
-       <div class="row">
-        <div class="col-md-6" style="margin: 2rem auto 0 auto;">
-            {% if error %}
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Error</strong>  
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-            {% else %}
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>{{q}}={{ans}}</strong>  
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-            {% endif %}
-        </div>
-       </div>
+        
         <div class="row">
             <div class="col-md-6" style="margin: 2rem auto 0 auto;">
                 <img class="img-fluid" src="{% static 'webpage.jpg' %}" style="  margin-bottom: 20px;">
@@ -55,7 +41,11 @@
                         <form method="GET" action="{% url 'getquery' %}">
                           <input list="languages" class="form-control" name="languages" style="margin-bottom: 1rem;">
                           <datalist id="languages">
-                            <option value="Python"> 
+                            {% for eachlang in arr %}
+                            <option value="{{eachlang}}">
+                             {% endfor %}
+                          </datalist>
+                          <!--  <option value="Python"> 
                             <option value="Java">
                             <option value="C">
                             <option value="C++">
@@ -65,8 +55,9 @@
                             <option value="CSS">
                             <option value="JavaScript">
                             <option value="Django">  
-                          </datalist>
-                             
+                          
+                        -->
+                       
                             <div class="row" style="margin-top: 10px;">
                                 <div class="col-6">
                                     <input type="submit" class="btn btn-success" style="display: block;margin: 0 auto;">
