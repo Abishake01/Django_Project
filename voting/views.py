@@ -20,3 +20,11 @@ def getquery(request):
         'globcnt':globcnt
     }
     return render(request,'main.html',context=mydic)
+def sortdata(request):
+    global globcnt
+    globcnt=dict(sorted(globcnt.items(),key=lambda x:x[1],reverse=True))
+    mydic={
+        'arr': arr,
+        'globcnt':globcnt
+    }
+    return render(request,'main.html',context=mydic)
