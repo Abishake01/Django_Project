@@ -25,14 +25,21 @@
               </li>  
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#instruction">Instruction </a>
-              </li>  
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#result">Result </a>
+              </li> 
             </ul>
           </div>
         </div>
       </nav>
 
-      <div class="container-fluid" style="margin-bottom: 10rem;">
-        {{globcnt}}
+      <div class="container-fluid"  >
+        {{globcnt}} <br>
+        {% for key,value in globcnt.items %}
+        {{key}} -> {{value}}
+        <br>
+        {% endfor %}
         <div class="row">
             <div class="col-md-6" style="margin: 2rem auto 0 auto;">
                 <img class="img-fluid" src="{% static 'webpage.jpg' %}" style="  margin-bottom: 20px;">
@@ -76,6 +83,51 @@
 
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-6" style="margin: 2rem auto 0 auto; color: aliceblue;">
+      <h1  class="badge text-bg-warning" id="result" name="result" style="text-align: center; color: aliceblue; display: block; font-size: 2rem;">Result</h1>
+        <hr>
+        <p class="display-4" id="result" name="result" style="text-align: center; color: aliceblue;">Which language is Top </p>
+       </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="table-responsive">
+          <table class="table caption-top">
+            
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
       <div class="row">
         <div class="col-md-6" style="margin: 2rem auto 0 auto; color: aliceblue;">
       <h1  class="badge text-bg-success" id="about" name="about" style="text-align: center; color: aliceblue; display: block; font-size: 2rem;"> About</h1>

@@ -3,7 +3,7 @@ from django.http import HttpResponse,JsonResponse
 
 # Create your views here.
 arr=['Python','Java','C','C++','Mysql','DataBase','HTML','CSS','JavaScript','TailwindCss','Django','React','Node.JS']
-globcnt=dict()
+globcnt= dict()
 def vote(request):
     mydic={
         'arr': arr
