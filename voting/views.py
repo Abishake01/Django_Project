@@ -8,7 +8,7 @@ def vote(request):
     mydic={
         'arr': arr
     }
-    return render(request,'main.html',context=mydic)
+    return render(request,'index.html',context=mydic)
 def getquery(request):
     q=request.GET['languages']
     if q in globcnt:
@@ -19,7 +19,7 @@ def getquery(request):
         'arr': arr,
         'globcnt':globcnt
     }
-    return render(request,'main.html',context=mydic)
+    return render(request,'index.html',context=mydic)
 def sortdata(request):
     global globcnt
     globcnt=dict(sorted(globcnt.items(),key=lambda x:x[1],reverse=True))
@@ -27,4 +27,4 @@ def sortdata(request):
         'arr': arr,
         'globcnt':globcnt
     }
-    return render(request,'main.html',context=mydic)
+    return render(request,'index.html',context=mydic)
