@@ -1,5 +1,4 @@
 echo "BUILD START"
-python -m pip install -requirements.txt
-pip freeze > requirements.txt
+pip install -r requirements.txt
 python manage.py collectstatic --noinput --clear
 echo "BUILD END"
